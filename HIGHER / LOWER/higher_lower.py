@@ -1,20 +1,33 @@
 import random
 import os
-from art  import logo, vs
+from art import logo, vs
 from game_data import data
+
+
+# short hand if else statement
+# if os.name == 'posix':
+#     'clear'
+# else:
+#     'cls'
+
 
 def clear():
     os.system('clear' if os.name == 'posix' else 'cls')
+
+
 
 points = 0
 game = True
 
 randb = random.choice(data)
 
+
 def format(choice):
+    # calling from dictionary
     name = choice['name']
     description = choice['description']
     country = choice['country']
+    # f string format for calling variables
     return (f"{name}, a {description}, from {country}.")
 
 def score():
@@ -35,6 +48,7 @@ while game:
     randa = randb
     randb = random.choice(data)
 
+    # to prevent same random comparison in the picker
     if randa == randb:
         randb = random.choice(data)
 

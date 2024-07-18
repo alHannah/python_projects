@@ -1,10 +1,19 @@
-num_of_rows = 5
-k = 0
-for i in range(1, num_of_rows + 1):
-    for space in range(1, (num_of_rows - 1) + 1):
-        print(end = " ")
-    while k != (2 * i - 1):
-        print("* ", end = "")
-        k += 1
-    k = 0
+row = int(input("Enter Row Size: "))
+col = int(input("Enter Column Size: "))
+
+multi_array = []
+
+count = 1
+
+for i in range(row):
+    row_list = []
+    for j in range(col):
+        row_list.append(count)
+        count += 1
+        print(row_list[j], end=" ")
+    multi_array.append(row_list)
     print()
+
+# You can uncomment the following lines to display the 2D array
+# for row_list in multi_array:
+#     print(" ".join(map(str, row_list)))
